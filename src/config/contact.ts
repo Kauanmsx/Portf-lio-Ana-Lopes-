@@ -1,8 +1,8 @@
 // SUBSTITUIR PELOS DADOS REAIS
 export const contactConfig = {
   phone: "+55 (71) 98122-4674",
-  whatsappNumber: "+55 (71) 98122-4674",
-  whatsappUrl: "https://wa.me/qr/NQ5RSVECIWVLL1",
+  whatsappNumber: "5571981224674",
+  whatsappUrl: "https://wa.me/5571981224674?text=Ol%C3%A1%2C%20Dra.%20Ana!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20procedimentos%20e%20realizar%20um%20agendamento.",
   instagram: "https://www.instagram.com/dra_analopess/",
   instagramHandle: "@dra_analopess",
   email: "draanalopes.15@gmail.com",

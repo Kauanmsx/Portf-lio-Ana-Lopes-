@@ -34,7 +34,10 @@ test("server-renders the Dra. Ana Lopes landing page", async () => {
   assert.match(html, /melhor vers/i);
   assert.match(html, /Nossos tratamentos/);
   assert.match(html, /Agende sua avalia/i);
-  assert.match(html, /https:\/\/wa\.me\/qr\/NQ5RSVECIWVLL1/);
+  assert.match(
+    html,
+    /https:\/\/wa\.me\/5571981224674\?text=Ol%C3%A1%2C%20Dra\.%20Ana!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20procedimentos%20e%20realizar%20um%20agendamento\./,
+  );
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
