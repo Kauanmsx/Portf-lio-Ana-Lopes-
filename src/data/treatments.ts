@@ -47,7 +47,7 @@ export const treatments: Treatment[] = [
     description: "Suavização de linhas de expressão com expressão preservada.",
     details:
       "O protocolo busca leveza e equilíbrio, com pontos definidos individualmente durante a avaliação presencial.",
-    image: "tratamentoHarmonizacao",
+    image: "tratamentoBotox",
   },
   {
     id: "skinbooster",

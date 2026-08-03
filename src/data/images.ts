@@ -7,6 +7,8 @@ export type SiteImageKey =
   | "tratamentoPreenchimento"
   | "tratamentoBioestimulador"
   | "tratamentoPeeling"
+  | "tratamentoBotox"
+  | "resultadoBotoxComparativo"
   | "antes"
   | "depois"
   | "clinica";
@@ -56,6 +58,16 @@ export const siteImages: Record<SiteImageKey, SiteImage> = {
   tratamentoPeeling: {
     src: "/images/tratamento-peeling.jpg",
     alt: "Peeling químico para renovação da pele",
+    fit: "cover",
+  },
+  tratamentoBotox: {
+    src: "/images/tratamento-botox.png",
+    alt: "Resultado de toxina botulinica na regiao dos olhos",
+    fit: "cover",
+  },
+  resultadoBotoxComparativo: {
+    src: "/images/resultado-botox-comparativo.png",
+    alt: "Comparativo de antes e depois de toxina botulinica",
     fit: "cover",
   },
   antes: {

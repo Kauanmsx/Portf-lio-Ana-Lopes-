@@ -9,6 +9,7 @@ import { siteImages } from "@/src/data/images";
 import { useReducedMotion } from "@/src/hooks/useReducedMotion";
 
 const resultCards = [
+  { title: "Toxina botulínica", image: siteImages.resultadoBotoxComparativo },
   { title: "Textura mais uniforme", image: siteImages.tratamentoPeeling },
   { title: "Contorno delicado", image: siteImages.tratamentoHarmonizacao },
   { title: "Viço e qualidade de pele", image: siteImages.tratamentoBioestimulador },
@@ -32,8 +33,8 @@ export function BeforeAfter() {
             <h3>Arraste para observar a evolução</h3>
             <p>
               A avaliação presencial define o melhor protocolo para cada caso.
-              As imagens são espaços preparados para substituição por registros
-              autorizados.
+              As imagens exibem registros autorizados e reforçam a importância
+              de um planejamento individualizado.
             </p>
             <small>Os resultados podem variar de acordo com cada paciente.</small>
           </div>
