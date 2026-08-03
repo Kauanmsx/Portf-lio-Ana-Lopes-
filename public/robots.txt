@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dra-ana-lopes.example.com/sitemap.xml
