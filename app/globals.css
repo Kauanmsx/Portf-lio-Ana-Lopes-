@@ -241,9 +241,9 @@ button {
 .brand-mark {
   width: 66px;
   height: 66px;
-  border: 1px solid rgba(201, 154, 61, 0.42);
+  border: 1px solid rgba(201, 154, 61, 0.3);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.72);
   display: grid;
   place-items: center;
   box-shadow: 0 10px 28px rgba(86, 62, 43, 0.08);
@@ -255,10 +255,43 @@ button {
 }
 
 .brand-initials {
-  fill: var(--green-dark);
-  font-family: var(--font-display), serif;
-  font-size: 27px;
-  font-weight: 600;
+  fill: #565d42;
+  font-family: Georgia, var(--font-display), serif;
+  font-weight: 500;
+}
+
+.brand-letter-a {
+  font-size: 42px;
+}
+
+.brand-letter-l {
+  font-size: 50px;
+}
+
+.brand-ring {
+  fill: none;
+  stroke: var(--gold);
+  stroke-linecap: round;
+  stroke-width: 2.2;
+}
+
+.brand-petal {
+  fill: rgba(239, 186, 179, 0.22);
+  stroke: var(--pink-medium);
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.brand-stem {
+  fill: none;
+  stroke: #565d42;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.brand-dot {
+  fill: var(--gold);
 }
 
 .brand-copy {
