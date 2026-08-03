@@ -1,146 +1,62 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { ImageWithFallback } from "../ui/ImageWithFallback";
 import { siteImages } from "@/src/data/images";
-import { useInViewOnce } from "@/src/hooks/useInViewOnce";
 import { useReducedMotion } from "@/src/hooks/useReducedMotion";
 
-function clamp(value: number) {
-  return Math.min(92, Math.max(8, value));
-}
+const photos = [
+  {
+    label: "Natural",
+    image: siteImages.draAnaCasual,
+    className: "hero-photo-casual",
+  },
+  {
+    label: "Profissional",
+    image: siteImages.draAnaHeroJaleco,
+    className: "hero-photo-jaleco",
+  },
+];
 
 export function ImageTransformation() {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [position, setPosition] = useState(88);
-  const [dragging, setDragging] = useState(false);
-  const [played, setPlayed] = useState(false);
-  const inView = useInViewOnce(ref);
   const reducedMotion = useReducedMotion();
 
-  useEffect(() => {
-    if (!inView || played || reducedMotion) {
-      return;
-    }
-
-    setPlayed(true);
-    const start = performance.now();
-    const duration = 1450;
-
-    const animate = (time: number) => {
-      const progress = Math.min((time - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setPosition(88 - eased * 48);
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    const frame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frame);
-  }, [inView, played, reducedMotion]);
-
-  const updateFromPointer = (clientX: number) => {
-    const box = ref.current?.getBoundingClientRect();
-    if (!box) {
-      return;
-    }
-    setPosition(clamp(((clientX - box.left) / box.width) * 100));
-  };
-
   return (
-    <div className="transformation-shell">
+    <div className="transformation-shell" aria-label="Dra. Ana Lopes em momentos natural e profissional">
       <motion.div
-        className="transformation-arc"
+        className="transformation-light"
         aria-hidden="true"
-        animate={reducedMotion ? undefined : { y: [0, -10, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        animate={reducedMotion ? undefined : { opacity: [0.55, 0.92, 0.55], x: [-10, 10, -10] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div
-        ref={ref}
-        className={`image-compare transformation-compare ${played ? "has-played" : ""}`}
-        onPointerDown={(event) => {
-          setDragging(true);
-          event.currentTarget.setPointerCapture(event.pointerId);
-          updateFromPointer(event.clientX);
-        }}
-        onPointerMove={(event) => {
-          if (dragging) {
-            updateFromPointer(event.clientX);
-          }
-        }}
-        onPointerUp={() => setDragging(false)}
-        onPointerCancel={() => setDragging(false)}
+      <motion.div
+        className="hero-photo-stage"
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <ImageWithFallback
-          image={siteImages.draAnaJaleco}
-          className="compare-image compare-after"
-          priority
-        />
-        <div
-          className="compare-before-wrap"
-          style={
-            {
-              width: `${position}%`,
-              "--clip-image-width": `${10000 / position}%`,
-            } as CSSProperties
-          }
+        {photos.map((photo, index) => (
+          <motion.figure
+            key={photo.label}
+            className={`hero-photo-card ${photo.className}`}
+            initial={{ opacity: 0, y: 26 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.18 + index * 0.18, duration: 0.65, ease: "easeOut" }}
+          >
+            <span className="hero-photo-label">{photo.label}</span>
+            <ImageWithFallback image={photo.image} className="hero-photo-image" priority />
+          </motion.figure>
+        ))}
+        <motion.div
+          className="hero-photo-arrow"
           aria-hidden="true"
+          animate={reducedMotion ? undefined : { x: [0, 5, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ImageWithFallback
-            image={siteImages.draAnaCasual}
-            className="compare-image compare-before"
-            priority
-          />
-        </div>
-        <span className="compare-label compare-label-left">Natural</span>
-        <span className="compare-label compare-label-right">Profissional</span>
-        <span className="transition-beam" aria-hidden="true" />
-        <div className="gold-particles" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-          <i />
-          <i />
-        </div>
-        <label className="sr-only" htmlFor="hero-transformation">
-          Controlar transição entre foto casual e jaleco profissional
-        </label>
-        <input
-          id="hero-transformation"
-          className="compare-range"
-          type="range"
-          min="8"
-          max="92"
-          value={position}
-          onChange={(event) => setPosition(Number(event.target.value))}
-          onKeyDown={(event) => {
-            if (event.key === "ArrowLeft" || event.key === "ArrowDown") {
-              event.preventDefault();
-              setPosition((value) => clamp(value - 4));
-            }
-            if (event.key === "ArrowRight" || event.key === "ArrowUp") {
-              event.preventDefault();
-              setPosition((value) => clamp(value + 4));
-            }
-            if (event.key === "Home") {
-              event.preventDefault();
-              setPosition(8);
-            }
-            if (event.key === "End") {
-              event.preventDefault();
-              setPosition(92);
-            }
-          }}
-        />
-        <div className="compare-handle" style={{ left: `${position}%` }} aria-hidden="true">
-          <ChevronLeft size={15} />
-          <ChevronRight size={15} />
-        </div>
-      </div>
+          <ChevronRight size={30} />
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

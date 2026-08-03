@@ -1,7 +1,6 @@
 "use client";
 
 import { HeartHandshake, Leaf, ShieldCheck, Sparkles } from "lucide-react";
-import { SectionTitle } from "../ui/SectionTitle";
 import { AnimatedIcon } from "../ui/AnimatedIcon";
 import { Reveal } from "../animations/Reveal";
 
@@ -32,11 +31,6 @@ export function Benefits() {
   return (
     <section className="section benefits-section" id="diferenciais">
       <div className="container">
-        <SectionTitle
-          eyebrow="Diferenciais"
-          title="Cuidado delicado, técnico e próximo"
-          subtitle="Cada detalhe foi pensado para uma experiência acolhedora, segura e personalizada."
-        />
         <div className="benefits-grid">
           {benefits.map((benefit, index) => (
             <Reveal key={benefit.title} delay={index * 0.08}>

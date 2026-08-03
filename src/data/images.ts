@@ -1,6 +1,7 @@
 export type SiteImageKey =
   | "logo"
   | "draAnaJaleco"
+  | "draAnaHeroJaleco"
   | "draAnaCasual"
   | "draAnaSentada"
   | "tratamentoHarmonizacao"
@@ -28,6 +29,11 @@ export const siteImages: Record<SiteImageKey, SiteImage> = {
   draAnaJaleco: {
     src: "/images/dra-ana-jaleco.jpeg",
     alt: "Dra. Ana Lopes usando jaleco profissional",
+    fit: "contain",
+  },
+  draAnaHeroJaleco: {
+    src: "/images/dra-ana-hero-jaleco.png",
+    alt: "Dra. Ana Lopes usando jaleco em fundo claro",
     fit: "contain",
   },
   draAnaCasual: {

@@ -75,6 +75,7 @@ const localBusinessSchema = {
   name: siteConfig.name,
   description: siteConfig.seo.description,
   url: siteConfig.url,
+  sameAs: [siteConfig.contact.instagram, siteConfig.contact.whatsappUrl],
   telephone: siteConfig.contact.phone,
   email: siteConfig.contact.email,
   address: {
