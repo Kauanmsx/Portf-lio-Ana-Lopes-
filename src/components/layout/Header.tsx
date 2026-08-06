@@ -8,7 +8,14 @@ import { MobileMenu } from "./MobileMenu";
 import { createWhatsAppUrl } from "@/src/config/contact";
 import { siteConfig } from "@/src/config/site";
 
-const sectionIds = ["inicio", "sobre", "tratamentos", "resultados", "depoimentos", "contato"];
+const sectionIds = [
+  "inicio",
+  "diferenciais",
+  "sobre",
+  "tratamentos",
+  "resultados",
+  "contato",
+];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);

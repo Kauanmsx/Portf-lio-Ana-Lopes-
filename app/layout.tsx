@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import { siteConfig } from "@/src/config/site";
-import "./globals.css";
+import "../css do site/globals.css";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -63,8 +63,8 @@ export async function generateMetadata(): Promise<Metadata> {
       "beleza natural",
     ],
     icons: {
-      icon: "/favicon.svg",
-      shortcut: "/favicon.svg",
+      icon: "/images/logo-mark.png",
+      shortcut: "/images/logo-mark.png",
     },
   };
 }

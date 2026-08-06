@@ -1,160 +1,96 @@
 "use client";
 
-import { ArrowRight, X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { A11y, Pagination } from "swiper/modules";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { useRef } from "react";
 import { SectionTitle } from "../ui/SectionTitle";
 import { ImageWithFallback } from "../ui/ImageWithFallback";
-import { Button } from "../ui/Button";
+import { FloatingFloral } from "../animations/FloatingFloral";
 import { treatments, type Treatment } from "@/src/data/treatments";
 import { siteImages } from "@/src/data/images";
-import { createWhatsAppUrl } from "@/src/config/contact";
 
-function TreatmentCard({
-  treatment,
-  onOpen,
-}: {
-  treatment: Treatment;
-  onOpen: (treatment: Treatment) => void;
-}) {
+function TreatmentCard({ treatment }: { treatment: Treatment }) {
   return (
-    <article className="treatment-card">
+    <article className={`treatment-card treatment-${treatment.id}`}>
       <div className="treatment-image">
         <ImageWithFallback image={siteImages[treatment.image]} />
       </div>
       <div className="treatment-content">
         <h3>{treatment.name}</h3>
         <p>{treatment.description}</p>
-        <button
-          type="button"
+        <Link
+          className="treatment-card-link"
           data-testid={`treatment-open-${treatment.id}`}
-          onClick={() => onOpen(treatment)}
+          aria-label={`Ver detalhes sobre ${treatment.name}`}
+          href={`/tratamentos/${treatment.id}`}
         >
           Saiba mais
           <ArrowRight aria-hidden="true" size={17} />
-        </button>
+        </Link>
       </div>
     </article>
   );
 }
 
 export function Treatments() {
-  const [selected, setSelected] = useState<Treatment | null>(null);
-  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const treatmentsRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    if (!selected) {
+  const scrollTreatments = (direction: -1 | 1) => {
+    const rail = treatmentsRef.current;
+    if (!rail) {
       return;
     }
 
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setSelected(null);
-      }
-      if (event.key === "Tab") {
-        const modal = document.querySelector<HTMLElement>(".treatment-modal");
-        const focusable = modal?.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-        );
-        if (!focusable?.length) {
-          return;
-        }
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
-        if (event.shiftKey && document.activeElement === first) {
-          last.focus();
-          event.preventDefault();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          first.focus();
-          event.preventDefault();
-        }
-      }
-    };
-
-    document.body.classList.add("modal-open");
-    document.addEventListener("keydown", onKeyDown);
-    window.setTimeout(() => closeButtonRef.current?.focus(), 40);
-    return () => {
-      document.body.classList.remove("modal-open");
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, [selected]);
+    rail.scrollBy({
+      left: direction * rail.clientWidth * 0.86,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section className="section treatments-section" id="tratamentos">
+      <FloatingFloral className="treatments-floral treatments-floral-top" />
+      <FloatingFloral className="treatments-floral treatments-floral-bottom" />
+      <span className="treatments-wave-line" aria-hidden="true" />
       <div className="container">
         <SectionTitle
           eyebrow="Tratamentos"
-          title="Nossos tratamentos"
-          subtitle="Cuidados personalizados para valorizar sua beleza de forma natural e segura."
+          title={
+            <>
+              Encontre o <span className="gold-text">cuidado ideal</span> para você
+            </>
+          }
+          subtitle="Tecnologia, ciência e excelência para realçar sua beleza com naturalidade e segurança."
         />
-        <div className="treatments-grid">
-          {treatments.map((treatment) => (
-            <TreatmentCard
-              key={treatment.id}
-              treatment={treatment}
-              onOpen={setSelected}
-            />
+        <div className="treatments-rail-wrap">
+          <button
+            type="button"
+            className="treatments-nav treatments-nav-prev"
+            aria-label="Tratamentos anteriores"
+            onClick={() => scrollTreatments(-1)}
+          >
+            <ChevronLeft aria-hidden="true" size={26} />
+          </button>
+          <div className="treatments-grid" ref={treatmentsRef}>
+            {treatments.map((treatment) => (
+              <TreatmentCard key={treatment.id} treatment={treatment} />
+            ))}
+          </div>
+          <button
+            type="button"
+            className="treatments-nav treatments-nav-next"
+            aria-label="Próximos tratamentos"
+            onClick={() => scrollTreatments(1)}
+          >
+            <ChevronRight aria-hidden="true" size={26} />
+          </button>
+        </div>
+        <div className="treatments-dots" aria-hidden="true">
+          {treatments.map((treatment, index) => (
+            <span className={index === 0 ? "is-active" : ""} key={treatment.id} />
           ))}
         </div>
-        <div className="treatments-carousel" aria-label="Carrossel de tratamentos">
-          <Swiper
-            modules={[Pagination, A11y]}
-            pagination={{ clickable: true }}
-            spaceBetween={18}
-            slidesPerView={1.08}
-            breakpoints={{ 620: { slidesPerView: 2.05 } }}
-          >
-            {treatments.map((treatment) => (
-              <SwiperSlide key={treatment.id}>
-                <TreatmentCard treatment={treatment} onOpen={setSelected} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
       </div>
-      <AnimatePresence>
-        {selected ? (
-          <motion.div
-            className="modal-backdrop"
-            role="presentation"
-            onClick={() => setSelected(null)}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div
-              className="treatment-modal"
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="treatment-modal-title"
-              initial={{ opacity: 0, y: 24, scale: 0.97 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 16, scale: 0.98 }}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <button
-                type="button"
-                className="modal-close"
-                data-testid="treatment-modal-close"
-                aria-label="Fechar detalhes do tratamento"
-                onClick={() => setSelected(null)}
-                ref={closeButtonRef}
-              >
-                <X aria-hidden="true" size={22} />
-              </button>
-              <span className="eyebrow">Tratamento</span>
-              <h3 id="treatment-modal-title">{selected.name}</h3>
-              <p>{selected.details}</p>
-              <Button href={createWhatsAppUrl()} icon="calendar">
-                Quero avaliar este cuidado
-              </Button>
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
     </section>
   );
 }

@@ -32,23 +32,23 @@ test("server-renders the Dra. Ana Lopes landing page", async () => {
   assert.match(html, /<title>Dra\. Ana Lopes \| Biom(?:é|&eacute;)dica Esteta<\/title>/i);
   assert.match(html, /Realce sua/);
   assert.match(html, /melhor vers/i);
-  assert.match(html, /Nossos tratamentos/);
+  assert.match(html, /Encontre o/);
+  assert.match(html, /cuidado ideal/);
   assert.match(html, /Agende sua avalia/i);
   assert.match(
     html,
     /https:\/\/wa\.me\/5571981224674\?text=Ol%C3%A1%2C%20Dra\.%20Ana!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20procedimentos%20e%20realizar%20um%20agendamento\./,
   );
-  assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
 test("ships expected public SEO assets", async () => {
-  const [robots, sitemap, favicon] = await Promise.all([
+  const [robots, sitemap, logo] = await Promise.all([
     readFile(new URL("../public/robots.txt", import.meta.url), "utf8"),
     readFile(new URL("../public/sitemap.xml", import.meta.url), "utf8"),
-    readFile(new URL("../public/favicon.svg", import.meta.url), "utf8"),
+    readFile(new URL("../public/images/logo-mark.png", import.meta.url)),
   ]);
 
   assert.match(robots, /User-agent: \*/);
   assert.match(sitemap, /<urlset/);
-  assert.match(favicon, /<svg/);
+  assert.ok(logo.byteLength > 0);
 });

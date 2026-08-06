@@ -15,13 +15,10 @@
   "dependencies": {
     "cross-env": "^10.1.0",
     "framer-motion": "^12.43.0",
-    "gsap": "^3.15.0",
     "lucide-react": "^1.28.0",
     "next": "16.2.6",
     "react": "19.2.6",
-    "react-dom": "19.2.6",
-    "react-hook-form": "^7.84.0",
-    "swiper": "^14.0.7"
+    "react-dom": "19.2.6"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.37.1",

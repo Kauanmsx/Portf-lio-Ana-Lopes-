@@ -6,15 +6,10 @@ import { WhatsAppButton } from "../components/ui/WhatsAppButton";
 import { Footer } from "../components/layout/Footer";
 import { Header } from "../components/layout/Header";
 import { About } from "../components/sections/About";
-import { BeforeAfter } from "../components/sections/BeforeAfter";
 import { Benefits } from "../components/sections/Benefits";
-import { ContactForm } from "../components/sections/ContactForm";
-import { FAQ } from "../components/sections/FAQ";
 import { FinalCTA } from "../components/sections/FinalCTA";
 import { Hero } from "../components/sections/Hero";
-import { Process } from "../components/sections/Process";
-import { Statistics } from "../components/sections/Statistics";
-import { Testimonials } from "../components/sections/Testimonials";
+import { Results } from "../components/sections/Results";
 import { Treatments } from "../components/sections/Treatments";
 
 export function Home() {
@@ -25,15 +20,10 @@ export function Home() {
       <main>
         <Hero />
         <Benefits />
-        <Treatments />
         <About />
-        <BeforeAfter />
-        <Statistics />
-        <Testimonials />
-        <Process />
-        <FAQ />
+        <Treatments />
+        <Results />
         <FinalCTA />
-        <ContactForm />
       </main>
       <Footer />
       <WhatsAppButton />

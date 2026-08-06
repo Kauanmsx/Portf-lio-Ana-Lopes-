@@ -1,34 +1,38 @@
-# Dra. Ana Lopes - Site Institucional
+# Site Dra. Ana Lopes
 
-Site institucional premium, responsivo e animado para Dra. Ana Lopes, Biomédica Esteta.
+Site institucional local para Dra. Ana Lopes, biomédica esteta.
 
-## Como rodar
+## Como abrir
 
 ```bash
 npm install
 npm run dev
 ```
 
-Para validar o build de produção:
+Depois acesse:
 
-```bash
-npm run build
-```
-
-Para rodar os testes renderizados:
-
-```bash
-npm test
+```text
+http://localhost:3000/
 ```
 
 ## Onde editar
 
-- Contatos e links: `src/config/contact.ts`
-- Dados gerais e SEO: `src/config/site.ts`
-- Imagens: `src/data/images.ts`
+- Página principal: `src/html do site/Home.tsx`
+- Seções do site: `src/components/sections`
+- Menu e rodapé: `src/components/layout`
+- Botões, imagens e itens reutilizáveis: `src/components/ui`
+- Dados gerais do site: `src/config/site.ts`
+- WhatsApp, Instagram e contato: `src/config/contact.ts`
 - Tratamentos: `src/data/treatments.ts`
-- Depoimentos de exemplo: `src/data/testimonials.ts`
-- Perguntas frequentes: `src/data/faq.ts`
-- Cores globais: `app/globals.css`
+- Imagens usadas no site: `src/data/images.ts`
+- Estilo visual e responsivo: `css do site/globals.css`
 
-Os depoimentos e dados marcados no código devem ser substituídos pelos dados reais autorizados.
+## Estrutura essencial
+
+- `app`: entrada técnica do site.
+- `css do site`: estilo visual do site.
+- `src`: conteúdo, seções e componentes.
+- `public`: imagens e arquivos públicos.
+- `tests`: validação simples do site.
+
+As pastas técnicas acima precisam manter esses nomes para o site continuar funcionando.

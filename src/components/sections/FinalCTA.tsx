@@ -8,7 +8,7 @@ import { createWhatsAppUrl } from "@/src/config/contact";
 
 export function FinalCTA() {
   return (
-    <section className="final-cta">
+    <section className="final-cta" id="contato">
       <div className="container final-cta-grid">
         <div className="final-cta-copy">
           <span className="eyebrow">Agendamento</span>
@@ -44,7 +44,13 @@ export function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.75 }}
         >
-          <ImageWithFallback image={siteImages.draAnaSentada} />
+          <span className="final-cta-logo-fill" aria-hidden="true" />
+          <span className="final-cta-floral-fill" aria-hidden="true" />
+          <span className="final-cta-gold-arc" aria-hidden="true" />
+          <ImageWithFallback
+            image={siteImages.draAnaHeroJaleco}
+            className="final-cta-doctor"
+          />
         </motion.div>
       </div>
     </section>

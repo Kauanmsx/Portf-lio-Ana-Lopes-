@@ -19,10 +19,13 @@ export function LoadingScreen() {
       return;
     }
 
-    setVisible(true);
     sessionStorage.setItem("ana-lopes-intro", "shown");
-    const timer = window.setTimeout(() => setVisible(false), 2400);
-    return () => window.clearTimeout(timer);
+    const showTimer = window.setTimeout(() => setVisible(true), 0);
+    const hideTimer = window.setTimeout(() => setVisible(false), 2400);
+    return () => {
+      window.clearTimeout(showTimer);
+      window.clearTimeout(hideTimer);
+    };
   }, [reducedMotion]);
 
   return (

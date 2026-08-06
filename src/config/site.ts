@@ -10,9 +10,9 @@ export const siteConfig = {
   nav: [
     { label: "Início", href: "#inicio" },
     { label: "Sobre", href: "#sobre" },
+    { label: "Serviços", href: "#diferenciais" },
     { label: "Tratamentos", href: "#tratamentos" },
     { label: "Resultados", href: "#resultados" },
-    { label: "Depoimentos", href: "#depoimentos" },
     { label: "Contato", href: "#contato" },
   ],
   seo: {

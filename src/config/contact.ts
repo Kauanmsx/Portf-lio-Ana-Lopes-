@@ -1,4 +1,3 @@
-// SUBSTITUIR PELOS DADOS REAIS
 export const contactConfig = {
   phone: "+55 (71) 98122-4674",
   whatsappNumber: "5571981224674",

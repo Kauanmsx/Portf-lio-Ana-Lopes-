@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, ShieldCheck } from "lucide-react";
 import { Button } from "../ui/Button";
 import { FloatingFloral } from "../animations/FloatingFloral";
 import { ImageTransformation } from "../animations/ImageTransformation";
@@ -29,7 +28,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.35 }}
             >
-              Realce sua
+              Realce sua melhor 
             </motion.span>
             <motion.span
               className="gold-text"
@@ -37,7 +36,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.55 }}
             >
-              melhor versão
+              versão
             </motion.span>
           </h1>
           <motion.p
@@ -55,18 +54,20 @@ export function Hero() {
             transition={{ duration: 0.55, delay: 0.95 }}
           >
             <Button href={createWhatsAppUrl()}>Agende sua consulta</Button>
-            <Button href="#tratamentos" variant="secondary" icon="arrow">
-              Conheça os tratamentos
-            </Button>
           </motion.div>
           <motion.div
-            className="hero-trust"
+            className="hero-social-proof"
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 1.08 }}
           >
-            <ShieldCheck aria-hidden="true" size={20} />
-            <span>Procedimentos personalizados, segurança e naturalidade.</span>
+            <span className="proof-avatars" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <i />
+            </span>
+          
           </motion.div>
         </div>
         <motion.div
@@ -76,10 +77,6 @@ export function Hero() {
           transition={{ duration: 0.75, delay: 0.45 }}
         >
           <ImageTransformation />
-          <div className="hero-floating-note" aria-hidden="true">
-            <Sparkles size={18} />
-            <span>Naturalidade</span>
-          </div>
         </motion.div>
       </div>
       <a className="scroll-indicator" href="#diferenciais" aria-label="Rolar para diferenciais">
