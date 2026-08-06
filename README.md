@@ -1,38 +1,125 @@
-# Site Dra. Ana Lopes
+# ✨ Site Institucional — Dra. Ana Lopes
 
-Site institucional local para Dra. Ana Lopes, biomédica esteta.
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-gold)
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![React](https://img.shields.io/badge/React-19-61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6)
 
-## Como abrir
+## 📖 Sobre o projeto
+
+Este projeto consiste no desenvolvimento de um **site institucional premium** para a **Dra. Ana Lopes**, Biomédica Esteta, com foco em oferecer uma experiência digital sofisticada, intuitiva e altamente responsiva.
+
+O objetivo é transmitir a mesma sensação de exclusividade, confiança e elegância presente na clínica, utilizando uma interface moderna inspirada em grandes referências internacionais de design.
+
+---
+
+## 🎯 Objetivos
+
+- Criar uma identidade visual elegante e atemporal.
+- Apresentar os procedimentos de forma clara e organizada.
+- Melhorar a experiência do paciente durante a navegação.
+- Facilitar o agendamento via WhatsApp.
+- Desenvolver uma arquitetura escalável para novos tratamentos.
+
+---
+
+## ✨ Principais funcionalidades
+
+- Interface 100% responsiva
+- Design premium
+- Hero Section moderna
+- Páginas individuais para cada tratamento
+- Navegação intuitiva
+- Componentes reutilizáveis
+- Otimização para SEO
+- Alto desempenho
+- Estrutura escalável
+- Layout moderno e minimalista
+
+---
+
+## 🩺 Tratamentos
+
+Cada procedimento possui sua própria página mantendo a identidade visual do projeto.
+
+- Harmonização Facial
+- Preenchimento Facial
+- Toxina Botulínica
+- Bioestimuladores
+- Laser CO₂
+- Limpeza de Pele
+- Microagulhamento
+- Skinbooster
+- Peelings
+
+---
+
+## 🎨 Identidade Visual
+
+O projeto foi inspirado em referências como:
+
+- Apple
+- Dior Beauty
+- Aesop
+- Louis Vuitton
+- Editorial Design
+
+### Paleta
+
+- Off-White
+- Rosa Suave
+- Dourado Champagne
+- Verde Oliva
+
+---
+
+## 🚀 Tecnologias
+
+- Next.js
+- React
+- TypeScript
+- CSS
+- Responsive Design
+
+---
+
+## 📂 Estrutura
 
 ```bash
-npm install
-npm run dev
+app/
+components/
+public/
+styles/
 ```
 
-Depois acesse:
+---
 
-```text
-http://localhost:3000/
-```
+## 📱 Responsividade
 
-## Onde editar
+O projeto foi desenvolvido para oferecer uma experiência consistente em:
 
-- Página principal: `src/html do site/Home.tsx`
-- Seções do site: `src/components/sections`
-- Menu e rodapé: `src/components/layout`
-- Botões, imagens e itens reutilizáveis: `src/components/ui`
-- Dados gerais do site: `src/config/site.ts`
-- WhatsApp, Instagram e contato: `src/config/contact.ts`
-- Tratamentos: `src/data/treatments.ts`
-- Imagens usadas no site: `src/data/images.ts`
-- Estilo visual e responsivo: `css do site/globals.css`
+- Desktop
+- Notebook
+- Tablet
+- Smartphone
 
-## Estrutura essencial
+---
 
-- `app`: entrada técnica do site.
-- `css do site`: estilo visual do site.
-- `src`: conteúdo, seções e componentes.
-- `public`: imagens e arquivos públicos.
-- `tests`: validação simples do site.
+## 📈 Futuras melhorias
 
-As pastas técnicas acima precisam manter esses nomes para o site continuar funcionando.
+- Área administrativa
+- Blog
+- Agendamento online
+- Integração com CRM
+- Painel de depoimentos
+- Galeria Antes e Depois
+
+---
+
+## 👨‍💻 Desenvolvedor
+
+Projeto desenvolvido com foco em design premium, performance, acessibilidade e experiência do usuário.
+
+---
+
+> "Mais do que um site institucional, este projeto representa uma experiência digital criada para refletir a excelência, o cuidado e a sofisticação da Dra. Ana Lopes."
