@@ -1,38 +1,41 @@
-# Site Dra. Ana Lopes
+# ✨ Dra. Ana Lopes — Luxury Aesthetic Clinic Website
 
-Site institucional local para Dra. Ana Lopes, biomédica esteta.
+A premium institutional website designed for **Dr. Ana Lopes**, Biomedical Aesthetic Specialist, built to deliver a sophisticated digital experience that reflects the elegance, trust, and exclusivity of a high-end aesthetic clinic.
 
-## Como abrir
+Inspired by the visual language of luxury brands such as **Dior Beauty, Aesop, Apple, Louis Vuitton, and modern editorial design**, this project combines minimalist aesthetics with immersive interactions, refined animations, and an exceptional user experience.
 
-```bash
-npm install
-npm run dev
-```
+---
 
-Depois acesse:
+## 🌿 Project Vision
 
-```text
-http://localhost:3000/
-```
+This website was created with one objective:
 
-## Onde editar
+> **Transform a traditional clinic website into a premium digital experience.**
 
-- Página principal: `src/html do site/Home.tsx`
-- Seções do site: `src/components/sections`
-- Menu e rodapé: `src/components/layout`
-- Botões, imagens e itens reutilizáveis: `src/components/ui`
-- Dados gerais do site: `src/config/site.ts`
-- WhatsApp, Instagram e contato: `src/config/contact.ts`
-- Tratamentos: `src/data/treatments.ts`
-- Imagens usadas no site: `src/data/images.ts`
-- Estilo visual e responsivo: `css do site/globals.css`
+Every element was carefully designed to communicate professionalism, beauty, and confidence while maintaining a clean, timeless visual identity.
 
-## Estrutura essencial
+---
 
-- `app`: entrada técnica do site.
-- `css do site`: estilo visual do site.
-- `src`: conteúdo, seções e componentes.
-- `public`: imagens e arquivos públicos.
-- `tests`: validação simples do site.
+## ✨ Highlights
 
-As pastas técnicas acima precisam manter esses nomes para o site continuar funcionando.
+- Premium responsive design
+- Elegant editorial-inspired interface
+- Luxury off-white color palette
+- Champagne gold accents
+- Muted olive green identity
+- Fully responsive across all devices
+- Smooth micro-interactions
+- Glassmorphism details
+- High-end typography
+- SEO-friendly architecture
+- Reusable treatment page template
+- Optimized loading performance
+- Modern component-based structure
+
+---
+
+## 🩺 Treatments Architecture
+
+The project follows a scalable architecture where every treatment shares the same premium layout while keeping unique content.
+
+Example:
