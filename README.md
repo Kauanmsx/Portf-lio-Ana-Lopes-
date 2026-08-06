@@ -1,41 +1,125 @@
-# ✨ Dra. Ana Lopes — Luxury Aesthetic Clinic Website
+# ✨ Site Institucional — Dra. Ana Lopes
 
-A premium institutional website designed for **Dr. Ana Lopes**, Biomedical Aesthetic Specialist, built to deliver a sophisticated digital experience that reflects the elegance, trust, and exclusivity of a high-end aesthetic clinic.
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-gold)
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![React](https://img.shields.io/badge/React-19-61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6)
 
-Inspired by the visual language of luxury brands such as **Dior Beauty, Aesop, Apple, Louis Vuitton, and modern editorial design**, this project combines minimalist aesthetics with immersive interactions, refined animations, and an exceptional user experience.
+## 📖 Sobre o projeto
 
----
+Este projeto consiste no desenvolvimento de um **site institucional premium** para a **Dra. Ana Lopes**, Biomédica Esteta, com foco em oferecer uma experiência digital sofisticada, intuitiva e altamente responsiva.
 
-## 🌿 Project Vision
-
-This website was created with one objective:
-
-> **Transform a traditional clinic website into a premium digital experience.**
-
-Every element was carefully designed to communicate professionalism, beauty, and confidence while maintaining a clean, timeless visual identity.
+O objetivo é transmitir a mesma sensação de exclusividade, confiança e elegância presente na clínica, utilizando uma interface moderna inspirada em grandes referências internacionais de design.
 
 ---
 
-## ✨ Highlights
+## 🎯 Objetivos
 
-- Premium responsive design
-- Elegant editorial-inspired interface
-- Luxury off-white color palette
-- Champagne gold accents
-- Muted olive green identity
-- Fully responsive across all devices
-- Smooth micro-interactions
-- Glassmorphism details
-- High-end typography
-- SEO-friendly architecture
-- Reusable treatment page template
-- Optimized loading performance
-- Modern component-based structure
+- Criar uma identidade visual elegante e atemporal.
+- Apresentar os procedimentos de forma clara e organizada.
+- Melhorar a experiência do paciente durante a navegação.
+- Facilitar o agendamento via WhatsApp.
+- Desenvolver uma arquitetura escalável para novos tratamentos.
 
 ---
 
-## 🩺 Treatments Architecture
+## ✨ Principais funcionalidades
 
-The project follows a scalable architecture where every treatment shares the same premium layout while keeping unique content.
+- Interface 100% responsiva
+- Design premium
+- Hero Section moderna
+- Páginas individuais para cada tratamento
+- Navegação intuitiva
+- Componentes reutilizáveis
+- Otimização para SEO
+- Alto desempenho
+- Estrutura escalável
+- Layout moderno e minimalista
 
-Example:
+---
+
+## 🩺 Tratamentos
+
+Cada procedimento possui sua própria página mantendo a identidade visual do projeto.
+
+- Harmonização Facial
+- Preenchimento Facial
+- Toxina Botulínica
+- Bioestimuladores
+- Laser CO₂
+- Limpeza de Pele
+- Microagulhamento
+- Skinbooster
+- Peelings
+
+---
+
+## 🎨 Identidade Visual
+
+O projeto foi inspirado em referências como:
+
+- Apple
+- Dior Beauty
+- Aesop
+- Louis Vuitton
+- Editorial Design
+
+### Paleta
+
+- Off-White
+- Rosa Suave
+- Dourado Champagne
+- Verde Oliva
+
+---
+
+## 🚀 Tecnologias
+
+- Next.js
+- React
+- TypeScript
+- CSS
+- Responsive Design
+
+---
+
+## 📂 Estrutura
+
+```bash
+app/
+components/
+public/
+styles/
+```
+
+---
+
+## 📱 Responsividade
+
+O projeto foi desenvolvido para oferecer uma experiência consistente em:
+
+- Desktop
+- Notebook
+- Tablet
+- Smartphone
+
+---
+
+## 📈 Futuras melhorias
+
+- Área administrativa
+- Blog
+- Agendamento online
+- Integração com CRM
+- Painel de depoimentos
+- Galeria Antes e Depois
+
+---
+
+## 👨‍💻 Desenvolvedor
+
+Projeto desenvolvido com foco em design premium, performance, acessibilidade e experiência do usuário.
+
+---
+
+> "Mais do que um site institucional, este projeto representa uma experiência digital criada para refletir a excelência, o cuidado e a sofisticação da Dra. Ana Lopes."
