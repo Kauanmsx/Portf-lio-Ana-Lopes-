@@ -116,10 +116,10 @@ O projeto foi desenvolvido para oferecer uma experiência consistente em:
 
 ---
 
-## 👨‍💻 Desenvolvedor
+## 👨‍💻 Autor
 
-Projeto desenvolvido com foco em design premium, performance, acessibilidade e experiência do usuário.
+**Kauan Marinho**
 
----
+Estudante de **Análise e Desenvolvimento de Sistemas**, buscando evolução constante em desenvolvimento de software e tecnologias Web.
 
-> "Mais do que um site institucional, este projeto representa uma experiência digital criada para refletir a excelência, o cuidado e a sofisticação da Dra. Ana Lopes."
+---  "Mais do que um site institucional, este projeto representa uma experiência digital criada para refletir a excelência, o cuidado e a sofisticação da Dra. Ana Lopes."
